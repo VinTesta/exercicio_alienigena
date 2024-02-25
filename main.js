@@ -2,12 +2,17 @@
 const screenConfig = {
   width: 700,
   height: 850
-}
+};
 
 class GameScene extends Phaser.Scene {
   // Variáveis do jogo
   score;
   pontuacao = 0;
+  orientadores_do_exercicio = [
+    'Fillipe Manoel Xavier Resina',
+    'Bruna Mayer',
+    'Kizzy Fernanda Terra Ferreira da Paz'
+  ]
 
   // Carrega os assets do jogo
   preload() {
@@ -38,6 +43,10 @@ class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.orientadores_do_exercicio.forEach(orientador => {
+      console.log(`Muito obrigado prof(a) ${orientador} pela orientação do exercício!`);
+    })
+
     // Instancia o background
     this.add.image(
       screenConfig.width / 2, 
